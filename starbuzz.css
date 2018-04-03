@@ -2,7 +2,7 @@ body {
   background-color: #b5a789;
   font-family:      Georgia, "Times New Roman", Times, serif;
   font-size:        small;
-  margin:           0px;
+  margin: 0px;
 }
 
 /*
@@ -13,9 +13,21 @@ body {
 	In HTML: add class="top" to main header in index.html and blog.html
 */
 
+div#gridContainer {
+  display: grid;
+  grid-gap: 10px;
+  margin : 10px;
+  grid-template-areas:
+
+    "header      header       header"
+    "nav      nav        nav"
+    "drinks   main  aside"
+    "footer  footer   footer";
+}
+
 header.top {
+  grid-area : header;
   background-color: #675c47;
-  margin: 10px 10px 0px 10px;
   height:           108px;
 }
 
@@ -26,8 +38,8 @@ header.top img#headerSlogan {
 
 /* nav new in blog */
 nav {
+  grid-area : nav;
 	background-color: #efe5d0;
-	margin: 10px 10px 10px 10px;
 }
 nav ul {
 	margin: 0px;
@@ -47,13 +59,14 @@ div#gridContainer {
 */
 
 section#drinks {
+  grid-area : drinks;
     background-color: #efe5d0;
-    width: 20%;
     padding: 15px;
     vertical-align: top;
 }
 
 section#main {
+  grid-area: main;
   background:       #efe5d0 url(images/background.gif) top left;
   font-size:        105%;
   padding:          15px;
@@ -61,6 +74,7 @@ section#main {
 }
 
 aside {
+  grid-area : aside;
   background:       #efe5d0 url(images/background.gif) bottom right;
   font-size:        105%;
   padding:          15px;
@@ -68,11 +82,11 @@ aside {
 }
 
 footer {
+  grid-area : footer;
   background-color: #675c47;
   color:            #efe5d0;
   text-align:       center;
   padding:          15px;
-  margin: 0px 10px 10px 10px;
   font-size:        90%;
 }
 
